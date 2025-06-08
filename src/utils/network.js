@@ -1,7 +1,4 @@
 
-const SWAPI_ROOT = 'https://swapi.py4e.com/api/';
-const SWAPI_PEOPLE = 'people';
-
 export const getApiResourse = async (url) => {
     try {
         const res = await fetch(url);
@@ -24,7 +21,7 @@ export const getApiResourse = async (url) => {
 }
 
 
-(async () => {
+/* (async () => {
     const body = await getApiResourse(SWAPI_ROOT+SWAPI_PEOPLE);
     console.log(body);
-})();
+})(); */
