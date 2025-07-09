@@ -11,7 +11,7 @@ import PersonLinkBack from "@components/PersonPage/PersonLinkBack";
 
 import UiLoading from "@ui/UiLoading";
 
-import { getApiResourse } from "@utils/network";
+import { getApiResource } from "@utils/network";
 import { getPeopleImage } from "@services/getPeopleData";
 import { API_PERSON } from '@constants/api';
 
@@ -35,7 +35,7 @@ const PersonPage = ({ setErrorApi }) => {
 
     useEffect(() => {
         (async () => {
-            const res = await getApiResourse(`${API_PERSON}/${id}/`);
+            const res = await getApiResource(`${API_PERSON}/${id}/`);
 
             storeDate[id] ? setPersonFavorite(true) : setPersonFavorite(false);
 

@@ -3,7 +3,7 @@
  * @param {String} url - url для запросаAdd commentMore actions
  * @return {Promise} - Promise с результатом запроса
  */
-export const getApiResourse = async (url) => {
+export const getApiResource = async (url) => {
     try {
         const res = await fetch(url);
 
