@@ -8,6 +8,7 @@ import { getApiResource } from "@utils/network";
 import { getPeopleImage, getPeopleId } from "@services/getPeopleData";
 import { API_SEARCH } from "@constants/api";
 
+import UiInput from "@ui/UiInput";
 import SearchPageInfo from "@components/SearchPage/SearchPageInfo";
 
 import styles from "./SearchPage.module.css";
@@ -17,7 +18,6 @@ const SearchPage = ({ setErrorApi }) => {
     const [people, setPeople] = useState([]);
 
     const getResponse = async param => {
-        console.log(param)
         const res = await getApiResource(API_SEARCH+param);
 
         if (res) {
@@ -49,9 +49,7 @@ const SearchPage = ({ setErrorApi }) => {
         []
     );
     
-    const handleInputChange = (event) => {
-        const value = event.target.value;
-
+    const handleInputChange = value => {
         setInputSearchValue(value);
         debouncedGetResponse(value);
     }
@@ -59,12 +57,14 @@ const SearchPage = ({ setErrorApi }) => {
     return (
         <>
             <h1 className="header__text">Search</h1>
-            <input
-                type="text" 
+
+            <UiInput
                 value={inputSearchValue}
-                onChange={handleInputChange}
+                handleInputChange={handleInputChange}
                 placeholder="Input character's name"
+                classes={styles.input__search}
             />
+
             <SearchPageInfo people={people} />
         </>
     )
