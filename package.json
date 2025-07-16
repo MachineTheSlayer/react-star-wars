@@ -4,6 +4,7 @@
   "homepage": "https://machinetheslayer.github.io/react-star-wars/",
   "private": true,
   "dependencies": {
+    "@storybook/storybook-deployer": "^2.8.16",
     "classnames": "^2.5.1",
     "lodash": "^4.17.21",
     "prop-types": "^15.8.1",
@@ -18,13 +19,13 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
+    "storybook": "start-storybook -p 6006 -s public",
     "deploy": "npm run build && npm run build-gh-pages",
     "build": "react-app-rewired build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "build-gh-pages": "gh-pages -d build"
+    "build-storybook": "build-storybook -o ./build/storybook",
+    "build-gh-pages": "gh-pages -d build",
+    "deploy-storybook": "storybook-to-ghpages",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
