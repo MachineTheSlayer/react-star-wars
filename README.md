@@ -44,10 +44,6 @@ npm run deploy-storybook # storybook deploy
 
 ---
 
-## 🐗 Lighthouse Metrics Performance
-
-<img src="https://github.com/MachineTheSlayer/react-star-wars/blob/__temp__/_temp/readme/lighthouse.png?raw=true" width="500px" />
-
 ---
 
 ## 🐼 Рассмотренные темы
